@@ -2,7 +2,6 @@ streamlit
 supabase
 python-dotenv
 pandas
-altair
 requests
 
 # Presidio + NLP
