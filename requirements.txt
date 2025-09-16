@@ -1,0 +1,11 @@
+streamlit
+supabase
+python-dotenv
+pandas
+altair
+requests
+
+# Presidio + NLP
+presidio-analyzer
+presidio-anonymizer
+spacy
