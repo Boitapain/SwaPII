@@ -1,3 +1,11 @@
+# Streamlit app
+streamlit
+# Supabase client
+supabase
+# For .env support
+python-dotenv
+# For multi-lingual support
+streamlit-i18n
 streamlit
 supabase
 python-dotenv

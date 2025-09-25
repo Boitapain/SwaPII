@@ -1,0 +1,16 @@
+{
+  "language": {
+    "title": "Select Language",
+    "choose_language": "Choose your language:",
+    "english": "English",
+    "french": "French",
+    "spanish": "Español",
+    "german": "Deutsch",
+    "use_navbar_home": "Use the navigation bar to return to Home."
+  },
+  "home": {
+    "title": "Home",
+    "welcome": "Welcome to SwaPII",
+    "main_app_text": "This is the main application."
+  }
+}

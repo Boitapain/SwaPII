@@ -1,0 +1,32 @@
+.st-key-language_selection {
+    text-align: center;
+}
+.st-key-lang-btn-fr > div > button,
+.st-key-lang-btn-es > div > button,
+.st-key-lang-btn-en > div > button,
+.st-key-lang-btn-de > div > button {
+    height: 3.5em;
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2em;
+}
+
+/* Make the emoji icon larger and add spacing */
+.st-key-lang-btn-fr [data-testid="stIconEmoji"],
+.st-key-lang-btn-es [data-testid="stIconEmoji"],
+.st-key-lang-btn-en [data-testid="stIconEmoji"],
+.st-key-lang-btn-de [data-testid="stIconEmoji"] {
+    font-size: 2.5em;
+    font-weight: bolder;
+    margin-right: 0.5em;
+    display: inline-flex;
+    align-items: center;
+}
+.st-key-lang-btn-fr [data-testid="stMarkdownContainer"] p,
+.st-key-lang-btn-es [data-testid="stMarkdownContainer"] p,
+.st-key-lang-btn-en [data-testid="stMarkdownContainer"] p,
+.st-key-lang-btn-de [data-testid="stMarkdownContainer"] p {
+    font-weight: 800;
+}
