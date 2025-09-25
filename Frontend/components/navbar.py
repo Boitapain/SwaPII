@@ -9,6 +9,7 @@ def load():
 
     pg = st.navigation([
         st.Page("pages/home.py", title=t.t("home.title"), icon=":material/home:"),
+        st.Page("pages/swap.py", title=t.t("swap.title"), icon=":material/swap_horiz:"),
         st.Page("pages/language.py", title=t.t("language.title"), icon=":material/language:")
     ], position="top", expanded=True)
     pg.run()

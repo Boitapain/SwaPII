@@ -12,5 +12,13 @@
     "title": "Startseite",
     "welcome": "Willkommen bei SwaPII",
     "main_app_text": "Dies ist die Hauptanwendung."
+  },
+  "swap": {
+    "title": "Swap",
+    "anonymize_placeholder": "Daten anonymisieren",
+    "deanonymize_placeholder": "Daten deanonymisieren",
+    "tab_full": "Vollanzeige",
+    "tab_2": "2 Spalten",
+    "tab_1": "1 Spalte"
   }
 }

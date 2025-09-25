@@ -3,6 +3,13 @@ import os
 from utils.i18n import Translator
 import components.navbar as navbar
 
+# Set page config
+st.set_page_config(
+    page_title="SwaPII",
+    page_icon=":material/swap_horizontal_circle:",  # Material icon for swap (as emoji, since Streamlit does not support Material icons directly)
+    layout="wide"
+)
+
 # Load navbar component
 navbar.load()
 

@@ -1,0 +1,4 @@
+# Frontend
+Frontend/.streamlit/secret.toml
+Frontend/components/__pycache__/
+Frontend/utils/__pycache__/

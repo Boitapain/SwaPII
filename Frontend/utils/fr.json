@@ -12,5 +12,13 @@
     "title": "Accueil",
     "welcome": "Bienvenue sur SwaPII",
     "main_app_text": "Ceci est l'application principale."
+  },
+  "swap": {
+    "title": "Swap",
+    "anonymize_placeholder": "Anonymiser les données",
+    "deanonymize_placeholder": "Déanonymiser les données",
+    "tab_full": "Affichage complet",
+    "tab_2": "2 colonnes",
+    "tab_1": "1 colonne"
   }
 }
