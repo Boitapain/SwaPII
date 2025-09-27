@@ -67,11 +67,22 @@ def logout():
 def call_create_user_profile(user_id):
     """Call Edge Function to create profile with role + IP"""
     try:
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {SUPABASE_KEY}"
+        }
+        payload = {"user_id": user_id}
+    # st.write(f"[LOG] Calling Edge Function: {EDGE_FUNCTION_URL}")
+    # st.write(f"[LOG] Headers: {headers}")
+    # st.write(f"[LOG] Payload: {payload}")
         res = requests.post(
             EDGE_FUNCTION_URL,
-            json={"user_id": user_id},
+            json=payload,
+            headers=headers,
             timeout=10
         )
+    # st.write(f"[LOG] Response status: {res.status_code}")
+    # st.write(f"[LOG] Response body: {res.text}")
         if res.status_code == 200:
             st.success("Profile created with default role and IP.")
         else:
