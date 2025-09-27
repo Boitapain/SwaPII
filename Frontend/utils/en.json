@@ -1,6 +1,6 @@
 {
   "language": {
-    "title": "Select Language",
+    "title": "Language",
     "choose_language": "Choose your language:",
     "english": "English",
     "french": "French",
@@ -20,5 +20,26 @@
     "tab_full": "Full display",
     "tab_2": "2 columns",
     "tab_1": "1 column"
+  },
+  "profile": {
+    "title": "Profile",
+    "email": "Email ",
+    "logout": "Logout",
+    "login_prompt": "Please log in to view your profile.",
+    "login_success": "Login successful!",
+    "login_failed": "Login failed. Please check your credentials.",
+    "account_not_verified": "Account not verified. Please check your email for a confirmation link.",
+    "signup_success": "Sign-up successful! You can now log in.",
+    "signup_failed": "Sign-up failed. The email may already be in use.",
+    "password_too_short": "Password is too short. Please use a longer password.",
+    "header": "User Profile",
+    "name": "Name",
+    "email_label": "Email",
+    "password": "Password",
+    "sign-in": "Sign In",
+    "sign-up": "Sign Up",
+    "id": "User ID ",
+    "missing_email_password": "You must provide an email and a password.",
+    "invalid_email": "The email address is invalid."
   }
 }

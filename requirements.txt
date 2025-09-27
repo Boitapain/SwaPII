@@ -1,6 +1,8 @@
 # Streamlit app
 streamlit
-st-supabase-connection
+
+# Supabase connection
+supabase
 
 python-dotenv
 pandas

@@ -1,6 +1,6 @@
 {
   "language": {
-    "title": "Sprache auswählen",
+    "title": "Sprache",
     "choose_language": "Wählen Sie Ihre Sprache:",
     "english": "Englisch",
     "french": "Französisch",
@@ -20,5 +20,26 @@
     "tab_full": "Vollanzeige",
     "tab_2": "2 Spalten",
     "tab_1": "1 Spalte"
+  },
+  "profile": {
+    "title": "Profil",
+    "email": "E-Mail ",
+    "logout": "Abmelden",
+    "login_prompt": "Bitte melden Sie sich an, um Ihr Profil zu sehen.",
+    "login_success": "Anmeldung erfolgreich!",
+    "login_failed": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Zugangsdaten.",
+    "account_not_verified": "Konto nicht verifiziert. Bitte überprüfen Sie Ihre E-Mails auf den Bestätigungslink.",
+    "signup_success": "Registrierung erfolgreich! Sie können sich jetzt anmelden.",
+    "signup_failed": "Registrierung fehlgeschlagen. Die E-Mail ist möglicherweise bereits in Gebrauch.",
+    "password_too_short": "Das Passwort ist zu kurz. Bitte verwenden Sie ein längeres Passwort.",
+    "header": "Benutzerprofil",
+    "name": "Name",
+    "email_label": "E-Mail",
+    "password": "Passwort",
+    "sign-in": "Anmelden",
+    "sign-up": "Registrieren",
+    "id": "Benutzer-ID ",
+    "missing_email_password": "Sie müssen eine E-Mail und ein Passwort angeben.",
+    "invalid_email": "Die E-Mail-Adresse ist ungültig."
   }
 }

@@ -1,6 +1,6 @@
 {
   "language": {
-    "title": "Sélectionnez la langue",
+    "title": "Langue",
     "choose_language": "Choisissez votre langue :",
     "english": "Anglais",
     "french": "Français",
@@ -20,5 +20,26 @@
     "tab_full": "Affichage complet",
     "tab_2": "2 colonnes",
     "tab_1": "1 colonne"
+  },
+  "profile": {
+    "title": "Profil",
+    "email": "Email ",
+    "logout": "Se déconnecter",
+    "login_prompt": "Veuillez vous connecter pour voir votre profil.",
+    "login_success": "Connexion réussie !",
+    "login_failed": "Échec de la connexion. Veuillez vérifier vos identifiants.",
+    "account_not_verified": "Compte non vérifié. Veuillez vérifier votre email pour le lien de confirmation.",
+    "signup_success": "Inscription réussie ! Vous pouvez maintenant vous connecter.",
+    "signup_failed": "Échec de l'inscription. L'email est peut-être déjà utilisé.",
+    "password_too_short": "Le mot de passe est trop court. Veuillez utiliser un mot de passe plus long.",
+    "header": "Profil utilisateur",
+    "name": "Nom",
+    "email_label": "Email",
+    "password": "Mot de passe",
+    "sign-in": "Se connecter",
+    "sign-up": "S'inscrire",
+    "id": "ID de l'utilisateur ",
+    "missing_email_password": "Vous devez fournir un email et un mot de passe.",
+    "invalid_email": "L'adresse email est invalide."
   }
 }
