@@ -1,1 +1,44 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "kingdom-hearts";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98% 0 0);
+  --color-base-300: oklch(95% 0 0);
+  --color-base-content: oklch(21% 0.006 285.885);
+  --color-primary: #1e40af;      /* Deep blue - Kingdom Hearts blue */
+  --color-primary-content: oklch(93% 0.034 272.788);
+  --color-secondary: #fbbf24;    /* Golden amber - Keyblade gold */
+  --color-secondary-content: oklch(94% 0.028 342.258);
+  --color-accent: #06b6d4;       /* Light cyan - Magic blue */
+  --color-accent-content: oklch(38% 0.063 188.416);
+  --color-neutral: #1f2937;      /* Dark gray - Darkness theme */
+  --color-neutral-content: oklch(92% 0.004 286.32);
+  --color-info: #3b82f6;         /* Blue info */
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: #10b981;      /* Green success */
+  --color-success-content: oklch(37% 0.077 168.94);
+  --color-warning: #f59e0b;      /* Amber warning */
+  --color-warning-content: oklch(66% 0.179 58.318);
+  --color-error: #ef4444;        /* Red error */
+  --color-error-content: oklch(27% 0.105 12.094);
+  --radius-selector: 2rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0rem;
+  --size-selector: 0.21875rem;
+  --size-field: 0.21875rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+  
+  /* Custom Kingdom Hearts colors */
+  --kh-purple: #7c3aed;   /* Royal purple */
+  --kh-silver: #94a3b8;   /* Silver/platinum */
+  --kh-rose: #f43f5e;     /* Rose pink */
+  --kh-emerald: #059669;  /* Emerald green */
+  --kh-gold: #d97706;     /* Rich gold */
+  --kh-cyan: #0ea5e9;     /* Bright cyan */
+}
