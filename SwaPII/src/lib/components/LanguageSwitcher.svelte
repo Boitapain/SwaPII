@@ -42,26 +42,6 @@
 	}
 </script>
 
-<!-- Language form for authenticated users -->
-{#if $page.data.session?.user}
-	<form 
-		id="language-form" 
-		method="POST" 
-		action="?/updateLanguage"
-		style="display: none;"
-		use:enhance={() => {
-			return async ({ result }) => {
-				// Handle form result if needed
-				if (result.type === 'success') {
-					console.log('Language preference updated successfully');
-				}
-			};
-		}}
-	>
-		<input type="hidden" name="language" value={currentLocale} />
-	</form>
-{/if}
-
 <!-- Language selector -->
 <select 
 	class="select select-bordered select-sm" 
