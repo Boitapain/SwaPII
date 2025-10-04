@@ -1,3 +1,7 @@
+<script>
+    import { _ } from "svelte-i18n";
+</script>
+
 <!-- Hero Section -->
 <div class="hero min-h-screen bg-base-100 relative overflow-hidden">
     <!-- Kingdom Hearts-inspired background elements -->
@@ -5,32 +9,31 @@
         <!-- Geometric symbols only with random positions, spread far apart -->
         <div class="absolute top-4 left-4 text-4xl animate-pulse" style="color:var(--kh-purple);animation-delay: 0.8s;">◈</div>
         <div class="absolute top-1/3 right-4 text-3xl animate-pulse" style="color:var(--kh-silver);animation-delay: 1.5s;">✧</div>
-        <div class="absolute top-2/8 left-2/7 text-3xl animate-pulse" style="color:var(--kh-rose);animation-delay: 1.5s;">◆</div>
+        <div class="absolute top-2/8 left-2/7 text-3xl animate-pulse" style="color:var(--kh-rose);animation-delay: 1.5s;">✢</div>
         <div class="absolute bottom-4 left-1/3 text-5xl animate-pulse" style="color:var(--kh-gold);animation-delay: 2.2s;">✦</div>
         <div class="absolute top-3/4 left-2 text-3xl animate-pulse" style="color:var(--kh-rose);animation-delay: 0.3s;">◊</div>
-        <div class="absolute top-16 right-1/6 text-6xl animate-pulse" style="color:var(--kh-cyan);animation-delay: 1.8s;">◇</div>
-        <div class="absolute bottom-1/4 right-1/2 text-2xl animate-pulse" style="color:var(--kh-emerald);animation-delay: 1.2s;">⬟</div>
-        <div class="absolute top-1/2 left-1/12 text-3xl animate-pulse" style="color:var(--kh-cyan);animation-delay: 2.5s;">◆</div>
-        <div class="absolute top-8 right-1/6 text-2xl animate-pulse" style="color:var(--kh-rose);animation-delay: 1.7s;">✧</div>
+        <div class="absolute top-16 right-1/9 text-6xl animate-pulse" style="color:var(--kh-cyan);animation-delay: 1.8s;">◇</div>
+        <div class="absolute bottom-1/4 right-1/2 text-2xl animate-pulse" style="color:var(--kh-emerald);animation-delay: 1.2s;">✣</div>
+        <div class="absolute top-1/2 left-1/12 text-3xl animate-pulse" style="color:var(--kh-cyan);animation-delay: 2.5s;">✩</div>
+        <div class="absolute top-2 right-1/6 text-2xl animate-pulse" style="color:var(--kh-rose);animation-delay: 1.7s;">✧</div>
         <div class="absolute bottom-16 left-1/12 text-4xl animate-pulse" style="color:var(--kh-gold);animation-delay: 0.6s;">◈</div>
-        <div class="absolute top-1/6 left-2/3 text-xl animate-pulse" style="color:var(--kh-purple);animation-delay: 2.8s;">⬡</div>
+        <div class="absolute top-1/6 left-2/3 text-xl animate-pulse" style="color:var(--kh-purple);animation-delay: 2.8s;">✤</div>
         <div class="absolute bottom-1/3 right-1/12 text-3xl animate-pulse" style="color:var(--kh-emerald);animation-delay: 1.3s;">✦</div>
         <div class="absolute top-5/6 left-3/4 text-2xl animate-pulse" style="color:var(--kh-silver);animation-delay: 0.9s;">◊</div>
         <div class="absolute bottom-8 right-1/6 text-4xl animate-pulse" style="color:var(--kh-emerald);animation-delay: 2.1s;">◇</div>
-        <div class="absolute top-2/5 right-3/4 text-3xl animate-pulse" style="color:var(--kh-silver);animation-delay: 1.6s;">⬟</div>
+        <div class="absolute top-2/5 right-3/4 text-5xl animate-pulse" style="color:var(--kh-silver);animation-delay: 1.6s;">✧</div>
     </div>
     
     <div class="hero-content text-center text-base-content relative z-10">
         <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold text-base-content">SwaPII</h1>
+            <h1 class="mb-5 text-5xl font-bold text-base-content">{$_('home.title')}</h1>
             <p class="mb-5 text-xl opacity-90">
-                The ultimate platform for secure data sharing and privacy
-                protection. Swap your data safely with <b class="underline decoration-[var(--kh-cyan)]">advanced PII detection</b>
-                and <i class="text-[var(--kh-emerald)]">anonymization</i>.
+                {$_('home.subtitle')} <b class="underline decoration-[var(--kh-cyan)]">{$_('home.advanced_pii')}</b>
+                {$_('common.and')} <i class="text-[var(--kh-emerald)]">{$_('home.anonymization')}</i>.
             </p>
             <div class="flex gap-4 justify-center">
-                <button class="btn btn-lg">Get Started</button>
-                <button class="btn btn-outline btn-lg">Learn More</button>
+                <button class="btn btn-lg">{$_('home.get_started')}</button>
+                <button class="btn btn-outline btn-lg">{$_('home.learn_more')}</button>
             </div>
         </div>
     </div>
@@ -46,15 +49,15 @@
         <div class="absolute top-3/4 left-1/12 text-3xl animate-pulse" style="color:var(--kh-emerald);animation-delay: 0.5s;">✦</div>
         <div class="absolute bottom-1/4 right-1/12 text-6xl animate-pulse" style="color:var(--kh-silver);animation-delay: 2.1s;">◊</div>
         <div class="absolute top-1/3 right-5/8 text-2xl animate-pulse" style="color:var(--kh-cyan);animation-delay: 1.4s;">◇</div>
-        <div class="absolute top-6 left-1/2 text-3xl animate-pulse" style="color:var(--kh-purple);animation-delay: 2.3s;">⬟</div>
-        <div class="absolute bottom-6 left-1/6 text-4xl animate-pulse" style="color:var(--kh-purple);animation-delay: 0.8s;">◆</div>
-        <div class="absolute top-1/2 right-3/4 text-2xl animate-pulse" style="color:var(--kh-rose);animation-delay: 1.6s;">⬡</div>
+        <div class="absolute top-6 left-5/9 text-3xl animate-pulse" style="color:var(--kh-purple);animation-delay: 2.3s;">✣</div>
+        <div class="absolute bottom-6 left-2/9 text-4xl animate-pulse" style="color:var(--kh-purple);animation-delay: 0.8s;">✢</div>
+        <div class="absolute top-1/2 right-3/4 text-2xl animate-pulse" style="color:var(--kh-rose);animation-delay: 1.6s;">✤</div>
         <div class="absolute bottom-1/3 left-3/4 text-3xl animate-pulse" style="color:var(--kh-cyan);animation-delay: 0.3s;">✧</div>
-        <div class="absolute top-5/6 right-1/2 text-xl animate-pulse" style="color:var(--kh-gold);animation-delay: 2.5s;">◈</div>
+        <div class="absolute top-5/6 right-5/11 text-xl animate-pulse" style="color:var(--kh-gold);animation-delay: 2.5s;">◈</div>
     </div>
     
     <div class="container mx-auto px-4 relative z-10">
-        <h2 class="text-4xl font-bold text-center mb-16 text-base-content">Why Choose SwaPII?</h2>
+        <h2 class="text-4xl font-bold text-center mb-16 text-base-content">{$_('home.why_choose_title')}</h2>
 
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Feature 1 -->
@@ -80,10 +83,9 @@
                             </svg>
                         </div>
                     </div>
-                    <h3 class="card-title justify-center text-black">Secure & Private</h3>
+                    <h3 class="card-title justify-center text-black">{$_('home.feature_secure_title')}</h3>
                     <p class="text-black/70">
-                        Advanced encryption and PII detection to keep your data
-                        safe and compliant.
+                        {$_('home.feature_secure_desc')}
                     </p>
                 </div>
             </div>
@@ -111,10 +113,9 @@
                             </svg>
                         </div>
                     </div>
-                    <h3 class="card-title justify-center text-black">Lightning Fast</h3>
+                    <h3 class="card-title justify-center text-black">{$_('home.feature_fast_title')}</h3>
                     <p class="text-black/70">
-                        Process and analyze your datasets in real-time with our
-                        optimized infrastructure.
+                        {$_('home.feature_fast_desc')}
                     </p>
                 </div>
             </div>
@@ -142,10 +143,9 @@
                             </svg>
                         </div>
                     </div>
-                    <h3 class="card-title justify-center text-black">Easy Integration</h3>
+                    <h3 class="card-title justify-center text-black">{$_('home.feature_integration_title')}</h3>
                     <p class="text-black/70">
-                        Simple APIs and intuitive dashboard to get you up and
-                        running in minutes.
+                        {$_('home.feature_integration_desc')}
                     </p>
                 </div>
             </div>
@@ -163,23 +163,21 @@
         <div class="absolute top-1/8 left-1/12 text-6xl animate-pulse" style="color:var(--kh-gold);animation-delay: 2.0s;">◈</div>
         <div class="absolute bottom-1/6 right-1/12 text-3xl animate-pulse" style="color:var(--kh-emerald);animation-delay: 0.9s;">✦</div>
         <div class="absolute top-5/6 left-1/6 text-2xl animate-pulse" style="color:var(--kh-rose);animation-delay: 1.7s;">◇</div>
-        <div class="absolute top-1/3 left-1/6 text-4xl animate-pulse" style="color:var(--kh-cyan);animation-delay: 1.1s;">⬟</div>
-        <div class="absolute bottom-8 left-1/2 text-3xl animate-pulse" style="color:var(--kh-emerald);animation-delay: 2.4s;">◆</div>
-        <div class="absolute top-1/2 right-3/4 text-2xl animate-pulse" style="color:var(--kh-purple);animation-delay: 0.5s;">⬡</div>
+        <div class="absolute top-1/3 left-1/6 text-4xl animate-pulse" style="color:var(--kh-cyan);animation-delay: 1.1s;">✣</div>
+        <div class="absolute bottom-8 left-1/2 text-3xl animate-pulse" style="color:var(--kh-emerald);animation-delay: 2.4s;">✢</div>
+        <div class="absolute top-1/2 right-3/4 text-2xl animate-pulse" style="color:var(--kh-purple);animation-delay: 0.5s;">✤</div>
         <div class="absolute bottom-1/3 left-3/4 text-4xl animate-pulse" style="color:var(--kh-rose);animation-delay: 1.8s;">✧</div>
-        <div class="absolute top-2/3 right-1/2 text-xl animate-pulse" style="color:var(--kh-cyan);animation-delay: 2.7s;">◈</div>
+        <div class="absolute top-9/15 right-1/2 text-xl animate-pulse" style="color:var(--kh-cyan);animation-delay: 2.7s;">◈</div>
     </div>
     
     <div class="container mx-auto px-4 text-center relative z-10">
-        <h2 class="text-4xl font-bold mb-8 drop-shadow-lg">Ready to Get Started?</h2>
+        <h2 class="text-4xl font-bold mb-8 drop-shadow-lg">{$_('home.cta_title')}</h2>
         <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90 drop-shadow">
-            Join thousands of companies already using SwaPII to protect their
-            sensitive data while enabling powerful analytics and machine
-            learning.
+            {$_('home.cta_subtitle')}
         </p>
         <div class="flex gap-4 justify-center">
-            <a href="/register" class="btn btn-tertiary btn-lg">Start Free Trial</a>
-            <a href="/demo" class="btn btn-outline btn-lg">Request Demo</a>
+            <a href="/register" class="btn btn-tertiary btn-lg">{$_('home.start_trial')}</a>
+            <a href="/demo" class="btn btn-outline btn-lg">{$_('home.request_demo')}</a>
         </div>
     </div>
 </div>

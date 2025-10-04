@@ -1,4 +1,4 @@
-import { redirect } from '@sveltejs/kit'
+import { redirect, fail } from '@sveltejs/kit'
 import { PUBLIC_SUPABASE_EDGE_CREATE_PROFILE } from '$env/static/public'
 
 import type { Actions } from './$types'
@@ -12,7 +12,10 @@ export const actions: Actions = {
         const { error } = await supabase.auth.signUp({ email, password })
         if (error) {
             console.error(error)
-            redirect(303, '/auth/error')
+            return fail(400, { 
+                error: error.message || 'Failed to create account',
+                email 
+            })
         } else {
             redirect(303, '/')
         }
@@ -25,21 +28,30 @@ export const actions: Actions = {
         const { data, error } = await supabase.auth.signInWithPassword({ email, password })
         if (error) {
             console.error(error)
-            redirect(303, '/auth/error')
+            return fail(400, { 
+                error: error.message || 'Failed to sign in',
+                email 
+            })
         } 
 
         // Get authenticated user data securely
         const { data: userData, error: userError } = await supabase.auth.getUser()
         if (userError || !userData.user) {
             console.error("Erreur récupération utilisateur:", userError)
-            throw redirect(303, '/auth/error')
+            return fail(400, { 
+                error: 'Failed to retrieve user data',
+                email 
+            })
         }
 
         // Récupère le JWT de la session
         const access_token = data.session?.access_token
         if (!access_token) {
             console.error("Pas de token après login")
-            throw redirect(303, '/auth/error')
+            return fail(400, { 
+                error: 'Authentication token missing',
+                email 
+            })
         }
         const response = await fetch(
             PUBLIC_SUPABASE_EDGE_CREATE_PROFILE,
@@ -58,7 +70,10 @@ export const actions: Actions = {
 
         if (!response.ok) {
             console.error("Erreur edge function:", await response.text())
-            throw redirect(303, '/auth/error')
+            return fail(400, { 
+                error: 'Failed to create user profile',
+                email 
+            })
         }
         
         redirect(303, '/profile')

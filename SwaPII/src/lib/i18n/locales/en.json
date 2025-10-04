@@ -1,0 +1,62 @@
+{
+    "navigation": {
+        "dashboard": "Dashboard",
+        "projects": "Projects",
+        "datasets": "Datasets",
+        "models": "Models"
+    },
+    "home": {
+        "title": "SwaPII",
+        "subtitle": "The ultimate platform for secure data sharing and privacy protection. Swap your data safely with",
+        "advanced_pii": "advanced PII detection",
+        "anonymization": "anonymization",
+        "get_started": "Get Started",
+        "learn_more": "Learn More",
+        "why_choose_title": "Why Choose SwaPII?",
+        "feature_secure_title": "Secure & Private",
+        "feature_secure_desc": "Advanced encryption and PII detection to keep your data safe and compliant.",
+        "feature_fast_title": "Lightning Fast",
+        "feature_fast_desc": "Process and analyze your datasets in real-time with our optimized infrastructure.",
+        "feature_integration_title": "Easy Integration",
+        "feature_integration_desc": "Simple APIs and intuitive dashboard to get you up and running in minutes.",
+        "cta_title": "Ready to Get Started?",
+        "cta_subtitle": "Join thousands of companies already using SwaPII to protect their sensitive data while enabling powerful analytics and machine learning.",
+        "start_trial": "Start Free Trial",
+        "request_demo": "Request Demo"
+    },
+    "auth": {
+        "welcome_title": "Welcome to",
+        "welcome_subtitle": "The ultimate platform for",
+        "secure_data_sharing": "secure data sharing",
+        "privacy_protection": "and privacy protection. Join thousands of companies protecting their sensitive data.",
+        "advanced_pii_detection": "Advanced PII Detection",
+        "enterprise_security": "Enterprise Security",
+        "lightning_fast": "Lightning Fast Processing",
+        "get_started": "Get Started",
+        "email": "Email",
+        "password": "Password",
+        "email_placeholder": "Enter your email",
+        "password_placeholder": "Enter your password",
+        "sign_in": "Sign In",
+        "create_account": "Create Account",
+        "terms_agreement": "By signing up, you agree to our",
+        "terms_service": "Terms of Service",
+        "privacy_policy": "Privacy Policy",
+        "and": "and"
+    },
+    "errors": {
+        "invalid_credentials": "Invalid email or password",
+        "user_exists": "User already exists",
+        "server_error": "Server error occurred",
+        "validation_error": "Validation error"
+    },
+    "common": {
+        "loading": "Loading...",
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "edit": "Edit",
+        "close": "Close",
+        "and": "and"
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "navigation": {
+        "dashboard": "Painel",
+        "projects": "Projetos",
+        "datasets": "Conjuntos de dados",
+        "models": "Modelos"
+    },
+    "home": {
+        "title": "SwaPII",
+        "subtitle": "A plataforma definitiva para compartilhamento seguro de dados e proteção da privacidade. Troque seus dados com segurança com",
+        "advanced_pii": "detecção avançada de DCP",
+        "anonymization": "anonimização",
+        "get_started": "Começar",
+        "learn_more": "Saiba mais",
+        "why_choose_title": "Por que escolher SwaPII?",
+        "feature_secure_title": "Seguro e Privado",
+        "feature_secure_desc": "Criptografia avançada e detecção de DCP para manter seus dados seguros e em conformidade.",
+        "feature_fast_title": "Ultra Rápido",
+        "feature_fast_desc": "Processe e analise seus conjuntos de dados em tempo real com nossa infraestrutura otimizada.",
+        "feature_integration_title": "Integração Fácil",
+        "feature_integration_desc": "APIs simples e painel intuitivo para começar em minutos.",
+        "cta_title": "Pronto para começar?",
+        "cta_subtitle": "Junte-se a milhares de empresas que já usam o SwaPII para proteger seus dados sensíveis enquanto permitem análises poderosas e aprendizado de máquina.",
+        "start_trial": "Teste Gratuito",
+        "request_demo": "Solicitar Demo"
+    },
+    "auth": {
+        "welcome_title": "Bem-vindo ao",
+        "welcome_subtitle": "A plataforma definitiva para",
+        "secure_data_sharing": "compartilhamento seguro de dados",
+        "privacy_protection": "e proteção da privacidade. Junte-se a milhares de empresas que protegem seus dados sensíveis.",
+        "advanced_pii_detection": "Detecção Avançada de DCP",
+        "enterprise_security": "Segurança Empresarial",
+        "lightning_fast": "Processamento Ultra Rápido",
+        "get_started": "Começar",
+        "email": "E-mail",
+        "password": "Senha",
+        "email_placeholder": "Digite seu e-mail",
+        "password_placeholder": "Digite sua senha",
+        "sign_in": "Entrar",
+        "create_account": "Criar conta",
+        "terms_agreement": "Ao se inscrever, você concorda com nossos",
+        "terms_service": "Termos de Serviço",
+        "privacy_policy": "Política de Privacidade",
+        "and": "e"
+    },
+    "errors": {
+        "invalid_credentials": "E-mail ou senha inválidos",
+        "user_exists": "Usuário já existe",
+        "server_error": "Erro do servidor",
+        "validation_error": "Erro de validação"
+    },
+    "common": {
+        "loading": "Carregando...",
+        "save": "Salvar",
+        "cancel": "Cancelar",
+        "delete": "Excluir",
+        "edit": "Editar",
+        "close": "Fechar",
+        "and": "e"
+    }
+}

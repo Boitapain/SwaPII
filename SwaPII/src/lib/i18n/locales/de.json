@@ -1,0 +1,62 @@
+{
+    "navigation": {
+        "dashboard": "Dashboard",
+        "projects": "Projekte",
+        "datasets": "Datensätze",
+        "models": "Modelle"
+    },
+    "home": {
+        "title": "SwaPII",
+        "subtitle": "Die ultimative Plattform für sicheren Datenaustausch und Datenschutz. Tauschen Sie Ihre Daten sicher mit",
+        "advanced_pii": "fortgeschrittener PII-Erkennung",
+        "anonymization": "Anonymisierung",
+        "get_started": "Loslegen",
+        "learn_more": "Mehr erfahren",
+        "why_choose_title": "Warum SwaPII wählen?",
+        "feature_secure_title": "Sicher & Privat",
+        "feature_secure_desc": "Fortgeschrittene Verschlüsselung und PII-Erkennung, um Ihre Daten sicher und konform zu halten.",
+        "feature_fast_title": "Blitzschnell",
+        "feature_fast_desc": "Verarbeiten und analysieren Sie Ihre Datensätze in Echtzeit mit unserer optimierten Infrastruktur.",
+        "feature_integration_title": "Einfache Integration",
+        "feature_integration_desc": "Einfache APIs und intuitive Benutzeroberfläche für den schnellen Einstieg.",
+        "cta_title": "Bereit anzufangen?",
+        "cta_subtitle": "Schließen Sie sich Tausenden von Unternehmen an, die bereits SwaPII verwenden, um ihre sensiblen Daten zu schützen und gleichzeitig leistungsstarke Analysen und maschinelles Lernen zu ermöglichen.",
+        "start_trial": "Kostenlose Testversion",
+        "request_demo": "Demo anfordern"
+    },
+    "auth": {
+        "welcome_title": "Willkommen bei",
+        "welcome_subtitle": "Die ultimative Plattform für",
+        "secure_data_sharing": "sicheren Datenaustausch",
+        "privacy_protection": "und Datenschutz. Schließen Sie sich Tausenden von Unternehmen an, die ihre sensiblen Daten schützen.",
+        "advanced_pii_detection": "Fortgeschrittene PII-Erkennung",
+        "enterprise_security": "Unternehmenssicherheit",
+        "lightning_fast": "Blitzschnelle Verarbeitung",
+        "get_started": "Loslegen",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "email_placeholder": "E-Mail eingeben",
+        "password_placeholder": "Passwort eingeben",
+        "sign_in": "Anmelden",
+        "create_account": "Konto erstellen",
+        "terms_agreement": "Mit der Anmeldung stimmen Sie unseren",
+        "terms_service": "Nutzungsbedingungen",
+        "privacy_policy": "Datenschutzrichtlinie",
+        "and": "und"
+    },
+    "errors": {
+        "invalid_credentials": "Ungültige E-Mail oder Passwort",
+        "user_exists": "Benutzer existiert bereits",
+        "server_error": "Serverfehler aufgetreten",
+        "validation_error": "Validierungsfehler"
+    },
+    "common": {
+        "loading": "Laden...",
+        "save": "Speichern",
+        "cancel": "Abbrechen",
+        "delete": "Löschen",
+        "edit": "Bearbeiten",
+        "close": "Schließen",
+        "and": "und"
+    }
+}

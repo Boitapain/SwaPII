@@ -1,5 +1,6 @@
 import { createBrowserClient, createServerClient, isBrowser } from '@supabase/ssr'
 import { PUBLIC_SUPABASE_PUBLISHABLE_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public'
+import { waitLocale } from '$lib/i18n'
 import type { LayoutLoad } from './$types'
 
 export const load: LayoutLoad = async ({ data, depends, fetch }) => {
@@ -38,6 +39,9 @@ export const load: LayoutLoad = async ({ data, depends, fetch }) => {
     const {
         data: { user },
     } = await supabase.auth.getUser()
+
+    // Wait for i18n to be loaded
+    await waitLocale()
 
     return { session, supabase, user }
 }

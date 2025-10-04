@@ -1,0 +1,62 @@
+{
+    "navigation": {
+        "dashboard": "Cruscotto",
+        "projects": "Progetti",
+        "datasets": "Set di dati",
+        "models": "Modelli"
+    },
+    "home": {
+        "title": "SwaPII",
+        "subtitle": "La piattaforma definitiva per la condivisione sicura dei dati e la protezione della privacy. Scambia i tuoi dati in sicurezza con",
+        "advanced_pii": "rilevamento avanzato di DCP",
+        "anonymization": "anonimizzazione",
+        "get_started": "Inizia",
+        "learn_more": "Scopri di più",
+        "why_choose_title": "Perché scegliere SwaPII?",
+        "feature_secure_title": "Sicuro e Privato",
+        "feature_secure_desc": "Crittografia avanzata e rilevamento DCP per mantenere i tuoi dati sicuri e conformi.",
+        "feature_fast_title": "Ultra Veloce",
+        "feature_fast_desc": "Elabora e analizza i tuoi set di dati in tempo reale con la nostra infrastruttura ottimizzata.",
+        "feature_integration_title": "Integrazione Facile",
+        "feature_integration_desc": "API semplici e dashboard intuitivo per essere operativi in pochi minuti.",
+        "cta_title": "Pronto per iniziare?",
+        "cta_subtitle": "Unisciti a migliaia di aziende che già usano SwaPII per proteggere i loro dati sensibili abilitando analisi potenti e apprendimento automatico.",
+        "start_trial": "Prova Gratuita",
+        "request_demo": "Richiedi Demo"
+    },
+    "auth": {
+        "welcome_title": "Benvenuto in",
+        "welcome_subtitle": "La piattaforma definitiva per",
+        "secure_data_sharing": "condivisione sicura dei dati",
+        "privacy_protection": "e protezione della privacy. Unisciti a migliaia di aziende che proteggono i loro dati sensibili.",
+        "advanced_pii_detection": "Rilevamento Avanzato DCP",
+        "enterprise_security": "Sicurezza Aziendale",
+        "lightning_fast": "Elaborazione Ultra Veloce",
+        "get_started": "Inizia",
+        "email": "Email",
+        "password": "Password",
+        "email_placeholder": "Inserisci la tua email",
+        "password_placeholder": "Inserisci la tua password",
+        "sign_in": "Accedi",
+        "create_account": "Crea account",
+        "terms_agreement": "Registrandoti, accetti i nostri",
+        "terms_service": "Termini di Servizio",
+        "privacy_policy": "Politica sulla Privacy",
+        "and": "e"
+    },
+    "errors": {
+        "invalid_credentials": "Email o password non validi",
+        "user_exists": "L'utente esiste già",
+        "server_error": "Errore del server",
+        "validation_error": "Errore di validazione"
+    },
+    "common": {
+        "loading": "Caricamento...",
+        "save": "Salva",
+        "cancel": "Annulla",
+        "delete": "Elimina",
+        "edit": "Modifica",
+        "close": "Chiudi",
+        "and": "e"
+    }
+}
