@@ -19,71 +19,117 @@
 
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 <!-- svelte-ignore a11y_missing_attribute -->
-<div class="navbar bg-base-100 shadow-sm">
-	<div class="flex mr-5">
-		<a href="/" class="btn-link decoration-transparent font-bold text-xl">SwaPII</a>
-	</div>
-	<div class="flex-2">
-		<ul class="menu menu-horizontal px-1">
-			<li>
-				<a href="/dashboard">Dashboard</a>
-			</li>
-			<li>
-				<a href="/projects">Projects</a>
-			</li>
-			<li>
-				<a href="/datasets">Datasets</a>
-			</li>
-			<li>
-				<a href="/models">Models</a>
-			</li>
-		</ul>
-	</div>
-	<div class="flex-none">
-		<!-- Profile dropdown -->
-		<div class="dropdown dropdown-end">
-			<div
-				tabindex="0"
-				role="button"
-				class="btn btn-ghost btn-circle avatar"
-			>
-				<div class="w-10 rounded-full items-center justify-center" style="display: flex;">
-					<svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="w-6 h-6 text-zinc-400"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                        />
-                    </svg>
+<div class="drawer">
+	<input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
+	<div class="drawer-content flex flex-col">
+		<!-- Navbar -->
+		<div class="navbar bg-base-100 shadow-sm">
+			<div class="navbar-start">
+				<!-- Mobile menu button -->
+				<label for="drawer-toggle" class="btn btn-square btn-ghost lg:hidden">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</label>
+				<!-- Logo -->
+				<a href="/" class="btn-link decoration-transparent font-bold text-xl ml-2">SwaPII</a>
+			</div>
+			
+			<!-- Desktop menu -->
+			<div class="navbar-center hidden lg:flex">
+				<ul class="menu menu-horizontal px-1">
+					<li>
+						<a href="/dashboard">Dashboard</a>
+					</li>
+					<li>
+						<a href="/projects">Projects</a>
+					</li>
+					<li>
+						<a href="/datasets">Datasets</a>
+					</li>
+					<li>
+						<a href="/models">Models</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="navbar-end">
+				<!-- Profile dropdown -->
+				<div class="dropdown dropdown-end">
+					<div
+						tabindex="0"
+						role="button"
+						class="btn btn-ghost btn-circle avatar"
+					>
+						<div class="w-10 rounded-full items-center justify-center" style="display: flex;">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="w-6 h-6 text-zinc-400"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<ul
+						tabindex="0"
+						class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+					>
+						<li>
+							<a href="/profile" class="justify-between">
+								Profile
+							</a>
+						</li>
+						<li>
+							<form method="POST" action="?/logout">
+								<button type="submit" class="btn-link w-full text-left">
+									Logout
+								</button>
+							</form>
+						</li>
+					</ul>
 				</div>
 			</div>
-
-			<ul
-				tabindex="0"
-				class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-			>
+		</div>
+		
+		<!-- Page content -->
+		<main class="flex-1">
+			{@render children()}
+		</main>
+	</div>
+	
+	<!-- Mobile drawer sidebar -->
+	<div class="drawer-side">
+		<label for="drawer-toggle" class="drawer-overlay"></label>
+		<aside class="min-h-full w-64 bg-base-200">
+			<!-- Sidebar header -->
+			<div class="p-4">
+				<a href="/" class="btn-link decoration-transparent font-bold text-xl">SwaPII</a>
+			</div>
+			<!-- Mobile menu -->
+			<ul class="menu p-4 space-y-2">
 				<li>
-					<a href="/profile" class="justify-between">
-						Profile
-					</a>
+					<a href="/dashboard" class="text-base">Dashboard</a>
 				</li>
 				<li>
-					<form method="POST" action="?/logout">
-						<button type="submit" class="btn-link w-full text-left">
-							Logout
-						</button>
-					</form>
+					<a href="/projects" class="text-base">Projects</a>
+				</li>
+				<li>
+					<a href="/datasets" class="text-base">Datasets</a>
+				</li>
+				<li>
+					<a href="/models" class="text-base">Models</a>
 				</li>
 			</ul>
-		</div>
+		</aside>
 	</div>
 </div>
 
-{@render children()}
