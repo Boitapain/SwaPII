@@ -1,22 +1,26 @@
 <script>
-	import { invalidate } from "$app/navigation";
-	import { onMount } from "svelte";
-	import { _ } from "svelte-i18n";
-	import LanguageSwitcher from "$lib/components/LanguageSwitcher.svelte";
-	import "../app.css";
+    import { invalidate } from "$app/navigation";
+    import { onMount } from "svelte";
+    import { _ } from "svelte-i18n";
+    import LanguageSwitcher from "$lib/components/LanguageSwitcher.svelte";
+    import "../app.css";
 
-	let { data, children } = $props();
-	let { session, supabase } = $derived(data);
+    let { data, children } = $props();
+    
+    // Use $derived for reactive values
+    let session = $derived(data.session);
+    let supabase = $derived(data.supabase);
+    let userProfile = $derived(data.userProfile);
 
-	onMount(() => {
-		const { data } = supabase.auth.onAuthStateChange((_, newSession) => {
-			if (newSession?.expires_at !== session?.expires_at) {
-				invalidate("supabase:auth");
-			}
-		});
+    onMount(() => {
+        const { data: authData } = supabase.auth.onAuthStateChange((_, newSession) => {
+            if (newSession?.expires_at !== session?.expires_at) {
+                invalidate("supabase:auth");
+            }
+        });
 
-		return () => data.subscription.unsubscribe();
-	});
+        return () => authData.subscription.unsubscribe();
+    });
 </script>
 
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
@@ -51,7 +55,7 @@
 					href="/"
 					class="btn-link decoration-transparent font-bold text-xl ml-2 flex items-center gap-2"
 				>
-					<img src="/favicon.svg" alt="SwaPII Logo" class="w-8 h-8" />
+					<img src="/favicon_transparent.svg" alt="SwaPII Logo" class="w-8 h-8" />
 					SwaPII
 				</a>
 			</div>
@@ -120,9 +124,11 @@
 			<div class="p-4">
 				<a
 					href="/"
-					class="btn-link decoration-transparent font-bold text-xl"
-					>SwaPII</a
+					class="btn-link decoration-transparent font-bold text-xl ml-2 flex items-center gap-2"
 				>
+					<img src="/favicon_transparent.svg" alt="SwaPII Logo" class="w-8 h-8" />
+					SwaPII
+				</a>
 			</div>
 			<!-- Mobile menu -->
 			<ul class="menu p-4 space-y-2">

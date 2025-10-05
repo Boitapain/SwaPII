@@ -21,9 +21,25 @@ export const availableLanguages = [
 	{ code: 'it', name: 'Italiano', flag: '🇮🇹' }
 ];
 
+function getCookie(name: string): string | null {
+	if (!browser) return null;
+	const match = document.cookie
+		.split('; ')
+		.find((row) => row.startsWith(name + '='));
+	return match ? decodeURIComponent(match.split('=')[1]) : null;
+}
+
+function getInitialLocale(): string {
+	if (!browser) return defaultLocale;
+	const cookieLocale = getCookie('preferred-language');
+	const lsLocale = localStorage.getItem('preferred-language');
+	const navLocale = window.navigator.language.split('-')[0];
+	return cookieLocale || lsLocale || navLocale || defaultLocale;
+}
+
 init({
 	fallbackLocale: defaultLocale,
-	initialLocale: browser ? window.navigator.language.split('-')[0] : defaultLocale,
+	initialLocale: getInitialLocale(),
 });
 
 export { locale, waitLocale };

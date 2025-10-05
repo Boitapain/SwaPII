@@ -1,6 +1,6 @@
 import { createBrowserClient, createServerClient, isBrowser } from '@supabase/ssr'
 import { PUBLIC_SUPABASE_PUBLISHABLE_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public'
-import { waitLocale } from '$lib/i18n'
+import { waitLocale, setLocale } from '$lib/i18n'
 import type { LayoutLoad } from './$types'
 
 export const load: LayoutLoad = async ({ data, depends, fetch }) => {
@@ -40,8 +40,21 @@ export const load: LayoutLoad = async ({ data, depends, fetch }) => {
         data: { user },
     } = await supabase.auth.getUser()
 
-    // Wait for i18n to be loaded
+    // Apply preferred locale early so UI renders with correct language
+    const preferredLocale = (data as any)?.preferredLocale as string | undefined
+    if (preferredLocale) {
+        try {
+            setLocale(preferredLocale)
+        } catch (e) {
+            console.warn('Failed to set preferred locale early', e)
+        }
+    }
+    // Wait for i18n to be loaded (ensures messages are registered)
     await waitLocale()
 
-    return { session, supabase, user }
+    console.log('📱 Layout Client: Returning data');
+    console.log('📱 Layout Client: Session exists:', !!session?.user);
+    console.log('📱 Layout Client: UserProfile from server:', data.userProfile);
+
+    return { session, supabase, user, userProfile: data.userProfile }
 }
