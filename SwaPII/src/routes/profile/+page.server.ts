@@ -25,6 +25,6 @@ export const actions: Actions = {
             console.error(error)
             // Even if logout fails, redirect to auth page
         }
-        redirect(303, '/auth')
+        return redirect(303, '/auth')
     },
 }

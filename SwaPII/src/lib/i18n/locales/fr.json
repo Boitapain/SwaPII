@@ -44,6 +44,18 @@
         "privacy_policy": "Politique de confidentialité",
         "and": "et"
     },
+    "profile": {
+        "title": "Votre profil",
+        "subtitle": "Gérez votre compte et vos préférences",
+        "created": "Créé le",
+        "session": "Session",
+        "logout_hint": "Terminez votre session en toute sécurité.",
+        "logout": "Se déconnecter",
+        "preferences": "Préférences",
+        "ui_language": "Langue de l'interface",
+        "save": "Enregistrer les modifications",
+        "reset": "Réinitialiser"
+    },
     "errors": {
         "invalid_credentials": "E-mail ou mot de passe invalide",
         "user_exists": "L'utilisateur existe déjà",

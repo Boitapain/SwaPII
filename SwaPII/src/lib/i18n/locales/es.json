@@ -44,6 +44,18 @@
         "privacy_policy": "Política de privacidad",
         "and": "y"
     },
+        "profile": {
+            "title": "Tu perfil",
+            "subtitle": "Administra tu cuenta y preferencias",
+            "created": "Creado",
+            "session": "Sesión",
+            "logout_hint": "Finaliza tu sesión actual de forma segura.",
+            "logout": "Cerrar sesión",
+            "preferences": "Preferencias",
+            "ui_language": "Idioma de la interfaz",
+            "save": "Guardar cambios",
+            "reset": "Restablecer"
+        },
     "errors": {
         "invalid_credentials": "Correo electrónico o contraseña inválidos",
         "user_exists": "El usuario ya existe",

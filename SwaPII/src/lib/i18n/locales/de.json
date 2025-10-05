@@ -44,6 +44,18 @@
         "privacy_policy": "Datenschutzrichtlinie",
         "and": "und"
     },
+        "profile": {
+            "title": "Dein Profil",
+            "subtitle": "Verwalte dein Konto und deine Einstellungen",
+            "created": "Erstellt",
+            "session": "Sitzung",
+            "logout_hint": "Beende deine aktuelle Sitzung sicher.",
+            "logout": "Abmelden",
+            "preferences": "Einstellungen",
+            "ui_language": "Oberflächensprache",
+            "save": "Änderungen speichern",
+            "reset": "Zurücksetzen"
+        },
     "errors": {
         "invalid_credentials": "Ungültige E-Mail oder Passwort",
         "user_exists": "Benutzer existiert bereits",
