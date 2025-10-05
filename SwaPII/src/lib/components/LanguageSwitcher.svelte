@@ -6,16 +6,16 @@
 
     let currentLocale = $state('en');
     
-    console.log('🔵 LanguageSwitcher: Component initialized');
+    //console.log('[LOG] LanguageSwitcher - Init Component : start|ok');
     
     // Always sync currentLocale with the actual locale store
-    $effect(() => {
-        console.log('🟡 LanguageSwitcher: Locale effect triggered');
+    $effect(() => { 
+        //console.log('[LOG] LanguageSwitcher - Effect LocaleSubscribe : trigger|ok');
         const unsubscribe = locale.subscribe(value => {
-            console.log('🟢 LanguageSwitcher: Locale store changed to:', value, 'Current state:', currentLocale);
+            //console.log('[LOG] LanguageSwitcher - Locale Changed new : ' + value + '|ok');
             if (value) {
                 currentLocale = value;
-                console.log('🟢 LanguageSwitcher: Updated currentLocale to:', currentLocale);
+                //console.log('[LOG] LanguageSwitcher - State currentLocale : ' + currentLocale + '|ok');
             }
         });
         return unsubscribe;
@@ -23,50 +23,53 @@
     
     // Handle profile language updates
     $effect(() => {
-        console.log('🟠 LanguageSwitcher: Profile effect triggered');
-        console.log('🟠 Page data session:', !!$page.data.session);
-        console.log('🟠 Page data userProfile:', $page.data.userProfile);
+        //console.log('[LOG] LanguageSwitcher - Effect ProfileLanguage : trigger|ok');
+        //console.log('[LOG] LanguageSwitcher - Context SessionExists : ' + (!!$page.data.session) + '|ok');
+        //console.log('[LOG] LanguageSwitcher - Context UserProfile : ' + JSON.stringify($page.data.userProfile) + '|ok');
         
         const profileLanguage = $page.data.userProfile?.ui_language;
         
         if (profileLanguage) {
-            console.log('🔴 Profile language detected:', profileLanguage, 'Current locale:', currentLocale);
+            //console.log('[LOG] LanguageSwitcher - Detect ProfileLanguage : ' + profileLanguage + '|ok');
             if (profileLanguage !== currentLocale) {
-                console.log('🔴 Setting language from profile:', profileLanguage);
+                //console.log('[LOG] LanguageSwitcher - Apply LocaleFromProfile target : ' + profileLanguage + '|pending');
                 setLocale(profileLanguage);
-                console.log('🔴 setLocale called with:', profileLanguage);
+                //console.log('[LOG] LanguageSwitcher - Apply LocaleFromProfile target : ' + profileLanguage + '|ok');
             } else {
-                console.log('🔴 Profile language matches current locale, no change needed');
+                //console.log('[LOG] LanguageSwitcher - Apply LocaleFromProfile : no-op|ok');
             }
         } else {
-            console.log('🔴 No profile language found');
+            // Log: profile has no language
+            //console.log('[LOG] LanguageSwitcher - Detect ProfileLanguage : none|skip');
         }
     });
     
     onMount(() => {
-        console.log('🟣 LanguageSwitcher: OnMount triggered');
-        console.log('🟣 Session exists:', !!$page.data.session?.user);
-        console.log('🟣 UserProfile on mount:', $page.data.userProfile);
+        //console.log('[LOG] LanguageSwitcher - Lifecycle OnMount : start|ok');
+        //console.log('[LOG] LanguageSwitcher - Context SessionUserExists : ' + (!!$page.data.session?.user) + '|ok');
+        //console.log('[LOG] LanguageSwitcher - Context UserProfileAtMount : ' + JSON.stringify($page.data.userProfile) + '|ok');
         
         // If no user session, try localStorage
         if (!$page.data.session?.user && typeof window !== 'undefined') {
             const savedLanguage = localStorage.getItem('preferred-language');
-            console.log('🟣 Saved language from localStorage:', savedLanguage);
+            //console.log('[LOG] LanguageSwitcher - Storage LocalPreferredLanguage : ' + savedLanguage + '|ok');
             if (savedLanguage && savedLanguage !== currentLocale) {
-                console.log('🟣 OnMount: Setting language from localStorage:', savedLanguage);
+                //console.log('[LOG] LanguageSwitcher - Apply LocaleFromLocalStorage target : ' + savedLanguage + '|pending');
                 setLocale(savedLanguage);
+                //console.log('[LOG] LanguageSwitcher - Apply LocaleFromLocalStorage target : ' + savedLanguage + '|ok');
             }
         } else {
-            console.log('🟣 User session exists, skipping localStorage check');
+            //console.log('[LOG] LanguageSwitcher - Storage LocalPreferredLanguage : skip_session_present|ok');
         }
     });
 
     async function handleLanguageChange(event) {
         const newLocale = event.target.value;
         
-        console.log('User changed language to:', newLocale);
+        //console.log('[LOG] LanguageSwitcher - UI ChangeLanguage target : ' + newLocale + '|pending');
         setLocale(newLocale);
         currentLocale = newLocale;
+        //console.log('[LOG] LanguageSwitcher - UI ChangeLanguage target : ' + newLocale + '|ok');
         
         if ($page.data.session?.user) {
             try {
@@ -80,16 +83,17 @@
                 
                 if (response.ok) {
                     localStorage.setItem('preferred-language', newLocale);
-                    console.log('Language updated in database');
+                    //console.log('[LOG] LanguageSwitcher - API UpdateLanguage target : ' + newLocale + '|ok');
                 } else {
-                    console.error('Failed to update language in database');
+                    //console.error('[LOG] LanguageSwitcher - API UpdateLanguage target : ' + newLocale + '|error');
                 }
             } catch (error) {
-                console.error('Failed to update language:', error);
+                //console.error('[LOG] LanguageSwitcher - API UpdateLanguage error : ' + (error?.message || String(error)) + '|exception');
             }
         } else {
             if (typeof window !== 'undefined') {
                 localStorage.setItem('preferred-language', newLocale);
+                //console.log('[LOG] LanguageSwitcher - Storage LocalPreferredLanguage : ' + newLocale + '|ok');
             }
         }
     }

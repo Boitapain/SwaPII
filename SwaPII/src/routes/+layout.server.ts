@@ -3,26 +3,26 @@ import type { LayoutServerLoad } from './$types'
 
 
 export const load: LayoutServerLoad = async ({ locals: { safeGetSession }, cookies }) => {
-    console.log('📋 Layout Server: Load function called');
+    //console.log('[LOG] LayoutServer - Load Called : start|ok');
     const { session } = await safeGetSession()
-    console.log('📋 Layout Server: Session exists:', !!session?.user);
+    //console.log('[LOG] LayoutServer - Session Exists : ' + (!!session?.user) + '|ok');
     
     let userProfile = null;
     let preferredLocale: string | null = null;
     
     if (session?.user) {
         try {
-            console.log('📋 Layout Server: Fetching user profile for:', session.user.id);
+            //console.log('[LOG] LayoutServer - Fetch UserProfile userId : ' + session.user.id + '|pending');
             const profileResult = await getUserProfile(session.user.id);
             userProfile = profileResult[0];
-            console.log('📋 Layout Server: User profile loaded:', userProfile);
-            console.log('📋 Layout Server: Profile language:', userProfile?.ui_language);
+            //console.log('[LOG] LayoutServer - Fetch UserProfile result : ' + JSON.stringify(userProfile) + '|ok');
+            //console.log('[LOG] LayoutServer - Profile Language value : ' + (userProfile?.ui_language || 'none') + '|ok');
             preferredLocale = userProfile?.ui_language ?? null;
         } catch (error) {
-            console.error('📋 Layout Server: Failed to load user profile:', error);
+            //console.error('[LOG] LayoutServer - Fetch UserProfile error : ' + (error?.message || String(error)) + '|exception');
         }
     } else {
-        console.log('📋 Layout Server: No session, skipping profile load');
+    //console.log('[LOG] LayoutServer - Fetch UserProfile : skip_no_session|ok');
     }
 
     // Fallback to cookie if no profile language
@@ -42,7 +42,7 @@ export const load: LayoutServerLoad = async ({ locals: { safeGetSession }, cooki
         });
     }
     
-    console.log('📋 Layout Server: Returning data with userProfile:', !!userProfile, 'and preferredLocale:', preferredLocale);
+    //console.log('[LOG] LayoutServer - Return Data userProfileExists : ' + (!!userProfile) + ' preferredLocale : ' + preferredLocale + '|ok');
     return {
         session,
         cookies: cookies.getAll(),

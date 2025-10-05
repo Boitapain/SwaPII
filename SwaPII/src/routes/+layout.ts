@@ -46,15 +46,15 @@ export const load: LayoutLoad = async ({ data, depends, fetch }) => {
         try {
             setLocale(preferredLocale)
         } catch (e) {
-            console.warn('Failed to set preferred locale early', e)
+            //console.warn('[LOG] LayoutClient - Set PreferredLocale Early error : ' + (e?.message || String(e)) + '|exception')
         }
     }
     // Wait for i18n to be loaded (ensures messages are registered)
     await waitLocale()
 
-    console.log('📱 Layout Client: Returning data');
-    console.log('📱 Layout Client: Session exists:', !!session?.user);
-    console.log('📱 Layout Client: UserProfile from server:', data.userProfile);
+    //console.log('[LOG] LayoutClient - Return Data : start|ok');
+    //console.log('[LOG] LayoutClient - Session Exists : ' + (!!session?.user) + '|ok');
+    //console.log('[LOG] LayoutClient - UserProfile FromServer : ' + JSON.stringify(data.userProfile) + '|ok');
 
     return { session, supabase, user, userProfile: data.userProfile }
 }

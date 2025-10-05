@@ -12,7 +12,7 @@ export const POST: RequestHandler = async ({ request, locals: { supabase }, cook
 
     const { language } = await request.json();
 
-    console.log('Updating language to:', language);
+    //console.log('[LOG] ApiLanguage - UpdateLanguage target : ' + language + '|pending');
 
     if (!language || language.length > 6) {
         throw error(400, 'Invalid language');
@@ -26,9 +26,9 @@ export const POST: RequestHandler = async ({ request, locals: { supabase }, cook
             maxAge: 60 * 60 * 24 * 365,
             sameSite: 'lax'
         });
-        return json({ success: true });
+    return json({ success: true });
     } catch (err) {
-        console.error('Failed to update language:', err);
+    //console.error('[LOG] ApiLanguage - UpdateLanguage error : ' + (err?.message || String(err)) + '|exception');
         throw error(500, 'Failed to update language preference');
     }
 }

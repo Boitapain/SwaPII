@@ -28,7 +28,7 @@ export const actions: Actions = {
 
         const { data, error } = await supabase.auth.signInWithPassword({ email, password })
         if (error) {
-            console.error(error)
+            //console.error('[LOG] AuthLogin - SignIn error : ' + (error?.message || String(error)) + '|exception')
             return fail(400, {
                 error: error.message || 'Failed to sign in',
                 email
@@ -38,7 +38,7 @@ export const actions: Actions = {
         // Get authenticated user data securely
         const { data: userData, error: userError } = await supabase.auth.getUser()
         if (userError || !userData.user) {
-            console.error("Erreur récupération utilisateur:", userError)
+            //console.error('[LOG] AuthLogin - GetUser error : ' + (userError?.message || String(userError)) + '|exception')
             return fail(400, {
                 error: 'Failed to retrieve user data',
                 email
@@ -48,7 +48,7 @@ export const actions: Actions = {
         // Récupère le JWT de la session
         const access_token = data.session?.access_token
         if (!access_token) {
-            console.error("Pas de token après login")
+            //console.error('[LOG] AuthLogin - AccessToken missing : ' + String(access_token) + '|error')
             return fail(400, {
                 error: 'Authentication token missing',
                 email
@@ -59,13 +59,13 @@ export const actions: Actions = {
         try {
             const existing = await getUserProfile(userData.user.id);
             profileExists = Array.isArray(existing) ? existing.length > 0 : !!existing;
-            console.log('🔐 Login: Profile exists:', profileExists);
+            //console.log('[LOG] AuthLogin - Profile Exists value : ' + profileExists + '|ok');
         } catch (e) {
-            console.warn('🔐 Login: Failed to check existing profile, will attempt creation once', e);
+            //console.warn('[LOG] AuthLogin - Check ProfileExists error : ' + (e?.message || String(e)) + '|exception');
         }
 
         if (!profileExists) {
-            console.log('🔐 Login: No profile found, calling edge function to create');
+            //console.log('[LOG] AuthLogin - Create Profile : start|pending');
             const response = await fetch(
                 PUBLIC_SUPABASE_EDGE_CREATE_PROFILE,
                 {
@@ -82,34 +82,34 @@ export const actions: Actions = {
             )
 
             if (!response.ok) {
-                console.error("Erreur edge function:", await response.text())
+                //console.error('[LOG] AuthLogin - Create Profile error : ' + (await response.text()) + '|exception')
                 return fail(400, {
                     error: 'Failed to create user profile',
                     email
                 })
             }
         } else {
-            console.log('🔐 Login: Profile already exists, skip edge creation (preserve ui_language)');
+            //console.log('[LOG] AuthLogin - Create Profile : skip_exists|ok');
         }
 
         // Load user profile after successful login and profile creation
         try {
-            console.log('🔐 Login: Fetching user profile for:', userData.user.id);
+            //console.log('[LOG] AuthLogin - Fetch UserProfile userId : ' + userData.user.id + '|pending');
             const profileResult = await getUserProfile(userData.user.id);
             const userProfile = profileResult[0]
-            console.log('🔐 Login: Profile loaded:', userProfile);
+            //console.log('[LOG] AuthLogin - Fetch UserProfile result : ' + JSON.stringify(userProfile) + '|ok');
             
             if (userProfile?.ui_language) {
-                console.log('🔐 Login: User preferred language:', userProfile.ui_language)
+                //console.log('[LOG] AuthLogin - User PreferredLanguage value : ' + userProfile.ui_language + '|ok')
             } else {
-                console.log('🔐 Login: No ui_language in profile');
+                //console.log('[LOG] AuthLogin - User PreferredLanguage value : none|ok')
             }
         } catch (profileError) {
-            console.error('🔐 Login: Failed to load user profile after login:', profileError)
+            //console.error('[LOG] AuthLogin - Fetch UserProfile error : ' + (profileError?.message || String(profileError)) + '|exception')
             // Don't fail the login if profile loading fails
         }
 
-        console.log('🔐 Login: Redirecting to /profile');
+        //console.log('[LOG] AuthLogin - Redirect To path : /profile|ok');
         // Use throw redirect to ensure proper invalidation
         throw redirect(303, '/profile')
     },
